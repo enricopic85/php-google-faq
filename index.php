@@ -4,7 +4,7 @@
             "title"=>"Come state implementando la recente decisione della Corte di giustizia dell'Unione europea (CGUE) relativa al diritto all'oblio?",
             "titleSize"=>"h2",
             "paragraphs"=>[
-            "La recente decisione della Corte di giustizia dell'Unione europea ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi.",
+            "La <a href='www.google.com'>recente decisione della Corte di giustizia dell'Unione europea</a> ha profonde conseguenze per i motori di ricerca in Europa. La Corte ha stabilito che alcuni utenti hanno il diritto di chiedere ai motori di ricerca come Google di rimuovere risultati relativi a chiavi di ricerca che includono il proprio nome. Per poter essere rimossi, i risultati visualizzati devono essere inadeguati, irrilevanti o non più rilevanti, o eccessivi.",
             "Da quando questa decisione è stata pubblicata il 13 maggio 2014, abbiamo lavorato incessantemente per uniformarci a essa. Si tratta di una procedura complessa perché dobbiamo valutare ogni singola richiesta e effettuare un bilanciamento tra il diritto dell'individuo a controllare i suoi dati personali ed il diritto di tutti di conoscere e distribuire le informazioni.",
             "Per presentare una richiesta di rimozione, compila questo modulo web. Riceverai una risposta automatica che conferma la ricezione della tua richiesta. Dopodiché valuteremo il tuo caso (tieni presente che potrebbe occorrere un po' di tempo perché abbiamo già ricevuto tante richieste simili). Nel valutare la richiesta, considereremo se i risultati includono informazioni obsolete relative alla tua vita privata. Considereremo inoltre se vi è un interesse pubblico a che le informazioni rimangano nei nostri risultati delle ricerche, ad esempio se riguardano frodi finanziarie, negligenza professionale, condanne penali o la tua condotta pubblica in relazione a un pubblico ufficio (eletto o non eletto). Queste valutazioni sono complesse e, in quanto organizzazione privata, potremmo non essere nella posizione giusta per prendere decisioni in merito al tuo caso. Se non sei d'accordo con la nostra valutazione, puoi rivolgerti all'Autorità garante per la protezione dei dati personali nel tuo paese.",
             "Nei prossimi mesi lavoreremo a stretto contatto con le autorità per la protezione dei dati e con altre autorità per perfezionare il nostro approccio. La decisione della CGUE rappresenta un cambiamento significativo per i motori di ricerca. Siamo preoccupati per le sue conseguenze, ma riteniamo anche che sia importante rispettare la decisione della Corte e ci stiamo adoperando per predisporre una procedura conforme alla legge.",
@@ -26,7 +26,7 @@
             "titleSize"=>"h2",
             "paragraphs"=>[
                 "Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:",
-                "<ol><li>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti: <li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li> <li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li></li><li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li> </ol>",
+                "<ol><li>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:<ol type='a'> <li>Google Ireland Limited, se gli utenti sono residenti nello Spazio economico europeo (paesi dell'Unione europea, oltre a Islanda, Liechtenstein e Norvegia) o in Svizzera.</li> <li>Google LLC, con sede negli Stati Uniti, per il resto del mondo.</li> </ol></li><li>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</li> </ol>",
                 "Tieni presente che i servizi Google sono fondamentalmente gli stessi a prescindere dalla società consociata che li offre o dal paese a cui è associato il tuo account."
             ]
         ],
@@ -41,7 +41,6 @@
         ]
 
     ];
-    $title=[];
 ?>
 
 
@@ -55,15 +54,10 @@
 </head>
 <body>
         <?php foreach ($db as  $dbs) {
-            if ($dbs["titleSize"]==="h2") { ?>
-                <h2><?php echo $dbs["title"] ?></h2>
-           <?php } else{  ?>
-                <h3><?php echo $dbs["title"] ?></h3>
-         <?php   } ?>
-         <?php foreach ($dbs["paragraphs"] as $key=> $dbsParagraph) { ?>
+         echo  "<{$dbs['titleSize']}>{$dbs['title']}</{$dbs['titleSize']}>";
+         foreach ($dbs["paragraphs"] as $dbsParagraph) { ?>
                 <p><?php echo $dbsParagraph?></p>
-     <?php   } ?>
+        <?php   } ?>
         <?php } ?>
-       
 </body>
 </html>

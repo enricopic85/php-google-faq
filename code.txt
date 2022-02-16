@@ -1,0 +1,5 @@
+ if ($dbs["titleSize"]==="h2") { ?>
+                <h2><?php echo $dbs["title"] ?></h2>
+           <?php } else{  ?>
+                <h3><?php echo $dbs["title"] ?></h3>
+         <?php   } ?>
